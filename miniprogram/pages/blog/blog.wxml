@@ -1,2 +1,35 @@
-<!--pages/blog/blog.wxml-->
-<text>pages/blog/blog.wxml</text>
+<view class="container">
+  <!-- 头部 -->
+  <view class="header">
+    <view class="publish-container"bind:tap="onPublish">
+      <i class="iconfont icon-fabu" />
+    </view>
+
+    <view class="search-container">
+      <x-search iconfont="iconfont" icon-sousuo="icon-sousuo" bind:search="onSearch" />
+    </view>
+  </view>
+
+  <!-- 博客卡片列表 -->
+  <view class="blog-list">
+    <block wx:for="{{blogList}}" wx:key="_id">
+      <view class="blog-panel">
+        <x-blog-card blog="{{item}}" bind:tap="goComment" data-blogid="{{item._id}}" />
+        <x-blog-ctrl
+          blogId="{{item._id}}"
+          iconfont="iconfont"
+          blog="{{item}}"
+          icon-pinglun="icon-pinglun"
+          icon-fenxiang1="icon-fenxiang1"
+         />
+      </view>
+    </block>
+  </view>
+  
+
+  <!-- 底部弹出层 -->
+  <x-login modalShow="{{modalShow}}"
+    bind:loginsuccess="loginSuccess"
+    bind:loginfail="loginFail">
+  </x-login>
+</view>

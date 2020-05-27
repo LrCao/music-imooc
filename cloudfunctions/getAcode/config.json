@@ -1,0 +1,7 @@
+{
+  "primissions": {
+    "openapi": [
+      "wxacode.getUnlimited"
+    ]
+  }
+}

@@ -71,6 +71,8 @@ Page({
         backgroundAudioManager.coverImgUrl = music.al.picUrl
         backgroundAudioManager.singer = music.ar[0].name
         backgroundAudioManager.epname = music.al.name
+        // 保存播放历史
+        this.savePlayHistory()
       }
       this.setData({
         isPlaying: true
@@ -147,6 +149,20 @@ Page({
 
   timeUpdate(event) {
     this.selectComponent('.lyric').update(event.detail.currentTime)
+  },
+
+  // 保存播放历史
+  savePlayHistory () {
+    const music = musiclist[nowPlayingIndex]
+    const openid = app.globalData.openid
+    const history = wx.getStorageSync(openid)
+    if (!history.some(i => i.id === music.id)) {
+      history.unshift(music)
+      wx.setStorage({
+        key: openid,
+        data: history,
+      })
+    }
   },
 
   /**

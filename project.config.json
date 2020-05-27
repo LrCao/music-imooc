@@ -48,12 +48,34 @@
 					"id": -1,
 					"name": "pages/demo/demo",
 					"pathName": "pages/demo/demo",
+					"query": "",
 					"scene": null
 				},
 				{
 					"id": 2,
 					"name": "pages/musiclist/musiclist",
 					"pathName": "pages/musiclist/musiclist",
+					"query": "playlistId=4871270340",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/blog/blog",
+					"pathName": "pages/blog/blog",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "pages/blog-edit/blog-edit",
+					"pathName": "pages/blog-edit/blog-edit",
+					"query": "nickName=曹震&avatarUrl= https://wx.qlogo.cn/mmopen/vi_32/JR3VMdvzQn7hRL0cy9oF3TrJ8oQlBYCyA5gNiba4ib8WicaOo2osWIWuibTHoMSW99Q70icSboicGlhtjWvibnQiaCBqUw/132",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/profile/profile",
+					"pathName": "pages/profile/profile",
 					"query": "playlistId=4871270340",
 					"scene": null
 				}
